@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  cursor: default;
+}
+
+.nes {
+  position: absolute;
+  -webkit-transform: translate(calc(100vw - 100% - 50px), calc(50px));
+          transform: translate(calc(100vw - 100% - 50px), calc(50px));
+  height: 260px;
+  z-index: 3;
+}
+
+header {
+  position: relative;
+  color: white;
+  background-color: #e80016;
+  height: 240px;
+  overflow: hidden;
+  padding: 60px;
+  letter-spacing: 0.05em;
+  -webkit-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  margin: 0 0 0px;
+  font-size: 120px;
+  line-height: 1;
+  opacity: 1;
+  -webkit-transition: 400ms ease-out;
+  transition: 400ms ease-out;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 18px;
+  -webkit-transition: 400ms ease-out 300ms;
+  transition: 400ms ease-out 300ms;
+}
+
+.is-changing header h1, .is-changing
+header h2 {
+  -webkit-transform: translateY(300px);
+          transform: translateY(300px);
+}
+
+section {
+  max-width: 800px;
+  margin: 160px auto;
+}
+
+section p {
+  -webkit-transition: 400ms ease-out 400ms;
+  transition: 400ms ease-out 400ms;
+}
+
+.is-changing section p {
+  -webkit-transform: translateY(80vh);
+          transform: translateY(80vh);
+}
+/*# sourceMappingURL=nes.css.map */

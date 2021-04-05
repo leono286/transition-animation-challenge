@@ -1,0 +1,141 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  cursor: default;
+}
+
+.full-size {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nes.home {
+  position: absolute;
+  height: 260px;
+  -webkit-transform: translate(calc(50vw - 189px), calc(50vh + 51px)) scale(0.3);
+          transform: translate(calc(50vw - 189px), calc(50vh + 51px)) scale(0.3);
+  z-index: 3;
+}
+
+body.active .nes.home {
+  -webkit-transform: translate(calc(100vw - 100% - 50px), calc(50px));
+          transform: translate(calc(100vw - 100% - 50px), calc(50px));
+}
+
+body.active .nes.home {
+  -webkit-transition: -webkit-transform 800ms ease-out 300ms;
+  transition: -webkit-transform 800ms ease-out 300ms;
+  transition: transform 800ms ease-out 300ms;
+  transition: transform 800ms ease-out 300ms, -webkit-transform 800ms ease-out 300ms;
+  -webkit-transition: 0;
+  transition: 0;
+}
+
+.above {
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 150px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  mix-blend-mode: darken;
+  -webkit-transition: opacity 600ms ease-out;
+  transition: opacity 600ms ease-out;
+  z-index: 4;
+}
+
+.above::after {
+  content: '';
+  width: 130px;
+  height: 130px;
+  border-radius: 130px;
+  -webkit-transition: opacity 150ms ease-out, -webkit-transform 550ms ease-out;
+  transition: opacity 150ms ease-out, -webkit-transform 550ms ease-out;
+  transition: opacity 150ms ease-out, transform 550ms ease-out;
+  transition: opacity 150ms ease-out, transform 550ms ease-out, -webkit-transform 550ms ease-out;
+  background-color: white;
+  position: absolute;
+  top: calc(50% - 65px);
+  left: calc(50% - 65px);
+  -webkit-transform: perspective(2000px) translate3d(0, 180px, 1px);
+          transform: perspective(2000px) translate3d(0, 180px, 1px);
+  opacity: 0;
+}
+
+body.visible .above::after {
+  opacity: 1;
+}
+
+body.active .above::after {
+  opacity: 1;
+  -webkit-transform: perspective(2000px) translate3d(0, 0px, 1850px);
+          transform: perspective(2000px) translate3d(0, 0px, 1850px);
+}
+
+.red-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #e80016;
+  opacity: 1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.4);
+  -webkit-transition: -webkit-transform 700ms ease-out 400ms;
+  transition: -webkit-transform 700ms ease-out 400ms;
+  transition: transform 700ms ease-out 400ms;
+  transition: transform 700ms ease-out 400ms, -webkit-transform 700ms ease-out 400ms;
+}
+
+body.active .red-layer {
+  -webkit-transform: translateY(calc(-100% + 240px));
+          transform: translateY(calc(-100% + 240px));
+}
+
+.trigger {
+  position: absolute;
+  width: 800px;
+  height: 170px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -48%);
+          transform: translate(-50%, -48%);
+  border: 10px solid #e80016;
+  border-radius: 200px;
+  z-index: 5;
+  -webkit-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+}
+
+body:not(.active) .trigger {
+  cursor: pointer;
+}
+
+body.active .trigger {
+  opacity: 0;
+}
+
+.transition-fade {
+  -webkit-transition: 100ms;
+  transition: 100ms;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0.99;
+}
+/*# sourceMappingURL=main.css.map */
