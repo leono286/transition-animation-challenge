@@ -18,7 +18,7 @@ body {
 }
 
 .underneath video {
-  height: 100%;
+  width: 100%;
 }
 
 .above {
@@ -32,10 +32,10 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  -webkit-transition: -webkit-transform 2s cubic-bezier(0.67, -0.12, 0.29, 1.38);
-  transition: -webkit-transform 2s cubic-bezier(0.67, -0.12, 0.29, 1.38);
-  transition: transform 2s cubic-bezier(0.67, -0.12, 0.29, 1.38);
-  transition: transform 2s cubic-bezier(0.67, -0.12, 0.29, 1.38), -webkit-transform 2s cubic-bezier(0.67, -0.12, 0.29, 1.38);
+  -webkit-transition: -webkit-transform 2.2s ease-in-out;
+  transition: -webkit-transform 2.2s ease-in-out;
+  transition: transform 2.2s ease-in-out;
+  transition: transform 2.2s ease-in-out, -webkit-transform 2.2s ease-in-out;
   text-align: center;
   -webkit-transform-origin: 49% center;
           transform-origin: 49% center;
@@ -43,8 +43,8 @@ body {
 }
 
 body.active .above {
-  -webkit-transform: perspective(1000px) translateZ(1000px);
-          transform: perspective(1000px) translateZ(1000px);
+  -webkit-transform: scale(60);
+          transform: scale(60);
 }
 
 .white-layer {
